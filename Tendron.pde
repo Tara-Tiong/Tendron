@@ -1,16 +1,24 @@
+int i = 20;
+int numRecursions = 3;
 public void setup()
 {
-  size(500, 500);  
+  size(600, 600);  
   background(255);
   noLoop();
 }
 
 public void draw()
 {
-  background(255);
-  Cluster c = new Cluster(50, 250, 250); // initial number of segments in the tendril and starting (x,y) coordinate
+  background(30, 25, 25);
+  Cluster c = new Cluster(i, mouseX, mouseY); 
+  c.show();
 }
 public void mousePressed()
 {
+  if(i < 200){
+  i+=3;
   redraw();
+  }
+  if(i == 200)
+  i =10;
 }
